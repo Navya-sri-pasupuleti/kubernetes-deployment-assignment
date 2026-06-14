@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kubernetes Assignment</title>
+</head>
+<body>
+
+    <h1>Kubernetes Version V2</h1>
+
+    <div id="content">
+        kubernetes with docker
+    </div>
+
+    <script>
+fetch('/api/version')
+  .then(response => response.json())
+  .then(data => {
+      document.getElementById('content').innerHTML = `
+          <h2>${data.version}</h2>
+          <p>${data.message}</p>
+          <p>${data.update || ''}</p>
+      `;
+  });
+</script>
+
+</body>
+</html>
+
